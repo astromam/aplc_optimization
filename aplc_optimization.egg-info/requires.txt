@@ -1,0 +1,9 @@
+gurobipy
+hcipy
+scipy
+numpy
+astropy
+poppy
+asdf
+matplotlib
+six
