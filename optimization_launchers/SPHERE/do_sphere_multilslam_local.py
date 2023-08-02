@@ -28,7 +28,7 @@ N: int
     The number of pixels in the input (Primary, LS) and final (apodizer) arrays.
 """
 survey_name = "multilslamC6"
-machine = "local"
+machine = "rita"
 N = 512
 
 '''
