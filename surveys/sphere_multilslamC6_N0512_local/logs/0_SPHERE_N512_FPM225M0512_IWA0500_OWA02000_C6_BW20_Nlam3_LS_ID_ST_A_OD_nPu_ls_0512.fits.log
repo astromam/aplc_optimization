@@ -1,0 +1,244 @@
+/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local/drivers/0_SPHERE_N512_FPM225M0512_IWA0500_OWA02000_C6_BW20_Nlam3_LS_ID_ST_A_OD_nPu_ls_0512.fits.py:108: DeprecationWarning: circular_aperture is deprecated. Its new name is make_circular_aperture.
+  dark_zone_mask = circular_aperture(img_owa * 2)(focal_grid) - circular_aperture(img_iwa * 2)(focal_grid)
+/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local/drivers/0_SPHERE_N512_FPM225M0512_IWA0500_OWA02000_C6_BW20_Nlam3_LS_ID_ST_A_OD_nPu_ls_0512.fits.py:116: DeprecationWarning: circular_aperture is deprecated. Its new name is make_circular_aperture.
+  focal_plane_mask = 1 - evaluate_supersampled(circular_aperture(2 * fpm_radius), focal_mask_grid, 8)
+Optimizer called with the following parameters:
+{'focal_plane_mask': {'field_stop_radius': -1.0,
+                      'grayscale': True,
+                      'num_pix': 512,
+                      'radius': 2.252},
+ 'image': {'bandwidth': 0.2,
+           'contrast': 6,
+           'iwa': 5,
+           'num_wavelengths': 3,
+           'owa': 20,
+           'resolution': 2},
+ 'instrument': {'inst_name': 'SPHERE'},
+ 'lyot_stop': {'alignment_tolerance': 1,
+               'filename': 'SPHERE/sphere_stop_ST_ALC2_nPup0512.fits',
+               'num_lyot_stops': 1},
+ 'method': {'edge_width_for_prior': 2,
+            'ending_scale': 1,
+            'force_no_hermitian_symmetry': False,
+            'force_no_x_mirror_symmetry': False,
+            'force_no_y_mirror_symmetry': False,
+            'initial_throughput_estimate': 1,
+            'maximize_planet_throughput': True,
+            'num_throughput_iterations': 2,
+            'starting_scale': 1},
+ 'pupil': {'N': 512,
+           'filename': 'SPHERE/pupil=vlt_btw_nPup=512.fits'},
+ 'solver': {'crossover': 0,
+            'method': 2,
+            'num_threads': 0}}
+
+File organization:
+{'analysis_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local/analysis',
+ 'drivers_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local/drivers',
+ 'input_files_dir': '/Users/mndiaye/python/aplc_optimization/masks',
+ 'log_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local/logs',
+ 'solution_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local/solutions',
+ 'survey_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multilslamC6_N0512_local'}
+
+Telescope pupil:
+   Mirror symmetry in x: yes
+   Mirror symmetry in y: yes
+
+Lyot stop #0:
+   Mirror symmetry in x: no
+   Searching for mirror symmetric Lyot stops in x...
+      Found Lyot stop #2 to fit.
+Lyot stop #1:
+   Mirror symmetry in x: no
+   Searching for mirror symmetric Lyot stops in x...
+      Found Lyot stop #3 to fit.
+Lyot stop #2:
+   Will be ignored due to symmetries with Lyot stops #[0]
+Lyot stop #3:
+   Will be ignored due to symmetries with Lyot stops #[1]
+Lyot stop #0:
+   Mirror symmetry in y: no
+   Searching for mirror symmetric Lyot stops in y...
+      Found Lyot stop #1 to fit.
+Lyot stop #1:
+   Will be ignored due to symmetries with Lyot stops #[0]
+Lyot stop #2:
+   Will be ignored due to symmetries with Lyot stops #[0]
+Lyot stop #3:
+   Will be ignored due to symmetries with Lyot stops #[1]
+
+Complete APLC:
+   Mirror symmetry in x: yes
+   Mirror symmetry in y: yes
+
+Starting optimization at scale 1 with 50162 variables and 14124 constraints.
+Creating model...
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-12-14
+Set parameter Crossover to value 0
+Set parameter Method to value 2
+Calculating and adding constraints...
+Wavelength 1/3; Variable 1000/50162
+Wavelength 1/3; Variable 2000/50162
+Wavelength 1/3; Variable 3000/50162
+Wavelength 1/3; Variable 4000/50162
+Wavelength 1/3; Variable 5000/50162
+Wavelength 1/3; Variable 6000/50162
+Wavelength 1/3; Variable 7000/50162
+Wavelength 1/3; Variable 8000/50162
+Wavelength 1/3; Variable 9000/50162
+Wavelength 1/3; Variable 10000/50162
+Wavelength 1/3; Variable 11000/50162
+Wavelength 1/3; Variable 12000/50162
+Wavelength 1/3; Variable 13000/50162
+Wavelength 1/3; Variable 14000/50162
+Wavelength 1/3; Variable 15000/50162
+Wavelength 1/3; Variable 16000/50162
+Wavelength 1/3; Variable 17000/50162
+Wavelength 1/3; Variable 18000/50162
+Wavelength 1/3; Variable 19000/50162
+Wavelength 1/3; Variable 20000/50162
+Wavelength 1/3; Variable 21000/50162
+Wavelength 1/3; Variable 22000/50162
+Wavelength 1/3; Variable 23000/50162
+Wavelength 1/3; Variable 24000/50162
+Wavelength 1/3; Variable 25000/50162
+Wavelength 1/3; Variable 26000/50162
+Wavelength 1/3; Variable 27000/50162
+Wavelength 1/3; Variable 28000/50162
+Wavelength 1/3; Variable 29000/50162
+Wavelength 1/3; Variable 30000/50162
+Wavelength 1/3; Variable 31000/50162
+Wavelength 1/3; Variable 32000/50162
+Wavelength 1/3; Variable 33000/50162
+Wavelength 1/3; Variable 34000/50162
+Wavelength 1/3; Variable 35000/50162
+Wavelength 1/3; Variable 36000/50162
+Wavelength 1/3; Variable 37000/50162
+Wavelength 1/3; Variable 38000/50162
+Wavelength 1/3; Variable 39000/50162
+Wavelength 1/3; Variable 40000/50162
+Wavelength 1/3; Variable 41000/50162
+Wavelength 1/3; Variable 42000/50162
+Wavelength 1/3; Variable 43000/50162
+Wavelength 1/3; Variable 44000/50162
+Wavelength 1/3; Variable 45000/50162
+Wavelength 1/3; Variable 46000/50162
+Wavelength 1/3; Variable 47000/50162
+Wavelength 1/3; Variable 48000/50162
+Wavelength 1/3; Variable 49000/50162
+Wavelength 1/3; Variable 50000/50162
+Warning for adding constraints: zero or small (< 1e-13) coefficients, ignored
+Wavelength 2/3; Variable 1000/50162
+Wavelength 2/3; Variable 2000/50162
+Wavelength 2/3; Variable 3000/50162
+Wavelength 2/3; Variable 4000/50162
+Wavelength 2/3; Variable 5000/50162
+Wavelength 2/3; Variable 6000/50162
+Wavelength 2/3; Variable 7000/50162
+Wavelength 2/3; Variable 8000/50162
+Wavelength 2/3; Variable 9000/50162
+Wavelength 2/3; Variable 10000/50162
+Wavelength 2/3; Variable 11000/50162
+Wavelength 2/3; Variable 12000/50162
+Wavelength 2/3; Variable 13000/50162
+Wavelength 2/3; Variable 14000/50162
+Wavelength 2/3; Variable 15000/50162
+Wavelength 2/3; Variable 16000/50162
+Wavelength 2/3; Variable 17000/50162
+Wavelength 2/3; Variable 18000/50162
+Wavelength 2/3; Variable 19000/50162
+Wavelength 2/3; Variable 20000/50162
+Wavelength 2/3; Variable 21000/50162
+Wavelength 2/3; Variable 22000/50162
+Wavelength 2/3; Variable 23000/50162
+Wavelength 2/3; Variable 24000/50162
+Wavelength 2/3; Variable 25000/50162
+Wavelength 2/3; Variable 26000/50162
+Wavelength 2/3; Variable 27000/50162
+Wavelength 2/3; Variable 28000/50162
+Wavelength 2/3; Variable 29000/50162
+Wavelength 2/3; Variable 30000/50162
+Wavelength 2/3; Variable 31000/50162
+Wavelength 2/3; Variable 32000/50162
+Wavelength 2/3; Variable 33000/50162
+Wavelength 2/3; Variable 34000/50162
+Wavelength 2/3; Variable 35000/50162
+Wavelength 2/3; Variable 36000/50162
+Wavelength 2/3; Variable 37000/50162
+Wavelength 2/3; Variable 38000/50162
+Wavelength 2/3; Variable 39000/50162
+Wavelength 2/3; Variable 40000/50162
+Wavelength 2/3; Variable 41000/50162
+Wavelength 2/3; Variable 42000/50162
+Wavelength 2/3; Variable 43000/50162
+Wavelength 2/3; Variable 44000/50162
+Wavelength 2/3; Variable 45000/50162
+Wavelength 2/3; Variable 46000/50162
+Wavelength 2/3; Variable 47000/50162
+Wavelength 2/3; Variable 48000/50162
+Wavelength 2/3; Variable 49000/50162
+Wavelength 2/3; Variable 50000/50162
+Wavelength 3/3; Variable 1000/50162
+Wavelength 3/3; Variable 2000/50162
+Wavelength 3/3; Variable 3000/50162
+Wavelength 3/3; Variable 4000/50162
+Wavelength 3/3; Variable 5000/50162
+Wavelength 3/3; Variable 6000/50162
+Wavelength 3/3; Variable 7000/50162
+Wavelength 3/3; Variable 8000/50162
+Wavelength 3/3; Variable 9000/50162
+Wavelength 3/3; Variable 10000/50162
+Wavelength 3/3; Variable 11000/50162
+Wavelength 3/3; Variable 12000/50162
+Wavelength 3/3; Variable 13000/50162
+Wavelength 3/3; Variable 14000/50162
+Wavelength 3/3; Variable 15000/50162
+Wavelength 3/3; Variable 16000/50162
+Wavelength 3/3; Variable 17000/50162
+Wavelength 3/3; Variable 18000/50162
+Wavelength 3/3; Variable 19000/50162
+Wavelength 3/3; Variable 20000/50162
+Wavelength 3/3; Variable 21000/50162
+Wavelength 3/3; Variable 22000/50162
+Wavelength 3/3; Variable 23000/50162
+Wavelength 3/3; Variable 24000/50162
+Wavelength 3/3; Variable 25000/50162
+Wavelength 3/3; Variable 26000/50162
+Wavelength 3/3; Variable 27000/50162
+Wavelength 3/3; Variable 28000/50162
+Wavelength 3/3; Variable 29000/50162
+Wavelength 3/3; Variable 30000/50162
+Wavelength 3/3; Variable 31000/50162
+Wavelength 3/3; Variable 32000/50162
+Wavelength 3/3; Variable 33000/50162
+Wavelength 3/3; Variable 34000/50162
+Wavelength 3/3; Variable 35000/50162
+Wavelength 3/3; Variable 36000/50162
+Wavelength 3/3; Variable 37000/50162
+Wavelength 3/3; Variable 38000/50162
+Wavelength 3/3; Variable 39000/50162
+Wavelength 3/3; Variable 40000/50162
+Wavelength 3/3; Variable 41000/50162
+Wavelength 3/3; Variable 42000/50162
+Wavelength 3/3; Variable 43000/50162
+Wavelength 3/3; Variable 44000/50162
+Wavelength 3/3; Variable 45000/50162
+Wavelength 3/3; Variable 46000/50162
+Wavelength 3/3; Variable 47000/50162
+Wavelength 3/3; Variable 48000/50162
+Wavelength 3/3; Variable 49000/50162
+Wavelength 3/3; Variable 50000/50162
+Start optimization...
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (mac64[arm])
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 28248 rows, 50162 columns and 1416976090 nonzeros
+Model fingerprint: 0x244c4d9e
+Coefficient statistics:
+  Matrix range     [1e-13, 3e-05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 1e-03]

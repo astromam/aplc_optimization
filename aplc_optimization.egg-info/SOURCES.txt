@@ -15,4 +15,5 @@ aplc_optimization.egg-info/top_level.txt
 aplc_optimization/Inputs_Generation/GPI_Inputs_Generation.py
 aplc_optimization/Inputs_Generation/HiCAT_Inputs_Generation.py
 aplc_optimization/Inputs_Generation/LUVOIR_Inputs_Generation.py
+aplc_optimization/Inputs_Generation/SPHERE_inputs_Generation.py
 aplc_optimization/Inputs_Generation/__init__.py

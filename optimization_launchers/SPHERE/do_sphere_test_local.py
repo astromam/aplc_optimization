@@ -12,10 +12,10 @@ Workflow:
 import os
 
 os.chdir('../..')
-instrument = 'gpi'  # do not edit
+instrument = 'sphere'  # do not edit
 from aplc_optimization.survey import DesignParameterSurvey
 from aplc_optimization.aplc import APLC
-from aplc_optimization.Inputs_Generation.GPI_Inputs_Generation import GPI_inputs_gen
+from aplc_optimization.Inputs_Generation.SPHERE_inputs_Generation import SPHERE_inputs_gen
 
 """
 Survey information
@@ -53,18 +53,15 @@ ls_spid: string
 # Aperture parameters
 ap_spid = True
 ap_sym = True
-satspots = False
+pupil_name = 'vlt_btw'
 
 # Lyot stop parameters
-ls_tabs = False
-lyot_mask = '080m12_04'
-ls_spid = True
-ls_sym = False
+ls_sym = True
 
 # INPUT FILES PARAMETER DICTIONARY
 input_files_dict = {'directory': 'SPHERE/', 'N': N,
-                    'aperture': {'ap_spid': True, 'ap_sym': True},
-                    'lyot_stop': {'lyot_mask': lyot_mask, 'ls_tabs': ls_tabs, 'ls_spid': ls_spid, 'ls_sym': ls_sym}}
+                    'aperture': {'ap_spid': True, 'ap_sym': True, 'pupil_name': pupil_name},
+                    'lyot_stop': {'ls_sym': ls_sym}}
 
 # INPUT FILE GENERATION
 pup_filename, ls_filename = SPHERE_inputs_gen(
@@ -109,8 +106,8 @@ ending_scale: int
     the adaptive algorithm is essentially turned off.
 '''
 # Focal plane mask parameters
-nFPM = 80
-radius = 3.476449131  # K1 FPM
+nFPM = 50
+radius = 2.252  # K1 FPM
 
 # Optimization constraints
 contrast = 8
@@ -133,29 +130,12 @@ survey_parameters = {'instrument': {'inst_name': instrument.upper()},
                                'num_wavelengths': num_wavelengths}}
 
 # RUN DESIGN SURVEY
-gpi = DesignParameterSurvey(APLC, survey_parameters,
+sphere = DesignParameterSurvey(APLC, survey_parameters,
                             'surveys/{}_{}_N{:04d}_{}/'.format(instrument, survey_name, N, machine),
                             'masks/')
-gpi.describe()
+sphere.describe()
 
-gpi.write_drivers(True)
-gpi.run_optimizations(True)
-gpi.run_analyses(True)
+sphere.write_drivers(True)
+sphere.run_optimizations(True)
+sphere.run_analyses(True)
 
-'''
-Example for multiple design parameters NOT as a grid
-########################################################
-
-survey_parameters_2 = {'pupil': {'N': n,'filename': pup_filename}, \
-                     'lyot_stop': {'filename': ls_filenames}, \
-                     'focal_plane_mask': {'radius':6.82, 'num_pix': 250, 'grayscale': True,},
-                     'image': {'contrast':10,'iwa':6.72,'owa':23.72,'bandwidth':0.10,'num_wavelengths':5}, \
-                     'method':{'starting_scale': 4}}
-
-luvoir = DesignParameterSurvey(PorAPLC, survey_parameters_2, 'surveys/luvoir_{}_small_N{:04d}_{}/'.format(survey_name,n,machine), 'masks/')
-luvoir.describe()
-
-luvoir.write_drivers(True)
-luvoir.run_optimizations(True)
-luvoir.run_analyses(True)
-'''

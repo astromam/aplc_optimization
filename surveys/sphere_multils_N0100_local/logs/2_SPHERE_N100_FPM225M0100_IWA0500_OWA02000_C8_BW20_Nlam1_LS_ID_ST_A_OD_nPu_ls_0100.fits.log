@@ -1,0 +1,67 @@
+/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/drivers/2_SPHERE_N100_FPM225M0100_IWA0500_OWA02000_C8_BW20_Nlam1_LS_ID_ST_A_OD_nPu_ls_0100.fits.py:101: DeprecationWarning: circular_aperture is deprecated. Its new name is make_circular_aperture.
+  dark_zone_mask = circular_aperture(img_owa * 2)(focal_grid) - circular_aperture(img_iwa * 2)(focal_grid)
+/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/drivers/2_SPHERE_N100_FPM225M0100_IWA0500_OWA02000_C8_BW20_Nlam1_LS_ID_ST_A_OD_nPu_ls_0100.fits.py:109: DeprecationWarning: circular_aperture is deprecated. Its new name is make_circular_aperture.
+  focal_plane_mask = 1 - evaluate_supersampled(circular_aperture(2 * fpm_radius), focal_mask_grid, 8)
+Optimizer called with the following parameters:
+{'focal_plane_mask': {'field_stop_radius': -1.0,
+                      'grayscale': True,
+                      'num_pix': 100,
+                      'radius': 2.252},
+ 'image': {'bandwidth': 0.2,
+           'contrast': 8,
+           'iwa': 5,
+           'num_wavelengths': 1,
+           'owa': 20,
+           'resolution': 2},
+ 'instrument': {'inst_name': 'SPHERE'},
+ 'lyot_stop': {'alignment_tolerance': 1,
+               'filename': 'SPHERE/sphere_stop_ST_ALC2_nPup0100.fits',
+               'num_lyot_stops': 3},
+ 'method': {'edge_width_for_prior': 2,
+            'ending_scale': 1,
+            'force_no_hermitian_symmetry': False,
+            'force_no_x_mirror_symmetry': False,
+            'force_no_y_mirror_symmetry': False,
+            'initial_throughput_estimate': 1,
+            'maximize_planet_throughput': True,
+            'num_throughput_iterations': 2,
+            'starting_scale': 1},
+ 'pupil': {'N': 100,
+           'filename': 'SPHERE/pupil=vlt_btw_nPup=100.fits'},
+ 'solver': {'crossover': 0,
+            'method': 2,
+            'num_threads': 0}}
+
+File organization:
+{'analysis_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/analysis',
+ 'drivers_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/drivers',
+ 'input_files_dir': '/Users/mndiaye/python/aplc_optimization/masks',
+ 'log_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/logs',
+ 'solution_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/solutions',
+ 'survey_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local'}
+
+Telescope pupil:
+   Mirror symmetry in x: yes
+   Mirror symmetry in y: yes
+
+
+Complete APLC:
+   Mirror symmetry in x: yes
+   Mirror symmetry in y: yes
+
+Starting optimization at scale 1 with 1913 variables and 0 constraints.
+Creating model...
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-12-14
+Set parameter Crossover to value 0
+Set parameter Method to value 2
+Calculating and adding constraints...
+Wavelength 1/1; Variable 1000/1913
+Traceback (most recent call last):
+  File "/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils_N0100_local/drivers/2_SPHERE_N100_FPM225M0100_IWA0500_OWA02000_C8_BW20_Nlam1_LS_ID_ST_A_OD_nPu_ls_0100.fits.py", line 119, in <module>
+    apodizer = optimize_aplc(
+               ^^^^^^^^^^^^^^
+  File "/Users/mndiaye/miniconda3/envs/py311/lib/python3.11/site-packages/aplc_optimization-1.0-py3.11.egg/aplc_optimization/optimizer.py", line 427, in optimize_aplc
+    base_electric_field = np.concatenate(base_electric_field)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: need at least one array to concatenate
