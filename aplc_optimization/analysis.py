@@ -147,6 +147,8 @@ def analyze_aplc_design_summary(solution_filename, pdf=None):
         instrument = 'HiCAT'
     elif 'GPI' in pup_fname:
         instrument = 'GPI'
+    elif 'SPHERE' in pup_fname:
+        instrument = 'SPHERE'
 
     regex = re.compile(r'\d+')
     pup_vals = regex.findall(pup_fname)
@@ -158,6 +160,9 @@ def analyze_aplc_design_summary(solution_filename, pdf=None):
     elif instrument == 'GPI':
         seg_gap_pad = 'n/a'
         oversamp = 'n/a'
+    elif instrument == 'SPHERE':
+        seg_gap_pad = 'n/a'
+        oversamp = 'n/a'        
 
     # Extract lyot stop inner and outer diameter from lyot stop filename
     ls_vals = regex.findall(ls_fname)
