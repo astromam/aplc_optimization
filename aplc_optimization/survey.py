@@ -20,7 +20,7 @@ mpl.use('Agg')
 
 def is_iterable(arg):
     """Check if arguement is iterable but not string_like"""
-    return isinstance(arg, collections.Iterable) and not isinstance(arg, six.string_types)
+    return isinstance(arg, collections.abc.Iterable) and not isinstance(arg, six.string_types)
 
 
 def mark_slow(func):

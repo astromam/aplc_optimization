@@ -1,0 +1,183 @@
+/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local/drivers/0_SPHERE_N100_FPM225M0100_IWA0500_OWA02000_C8_BW20_Nlam1_LS_ID_ST_A_OD_nPu_ls_0100.fits.py:108: DeprecationWarning: circular_aperture is deprecated. Its new name is make_circular_aperture.
+  dark_zone_mask = circular_aperture(img_owa * 2)(focal_grid) - circular_aperture(img_iwa * 2)(focal_grid)
+/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local/drivers/0_SPHERE_N100_FPM225M0100_IWA0500_OWA02000_C8_BW20_Nlam1_LS_ID_ST_A_OD_nPu_ls_0100.fits.py:116: DeprecationWarning: circular_aperture is deprecated. Its new name is make_circular_aperture.
+  focal_plane_mask = 1 - evaluate_supersampled(circular_aperture(2 * fpm_radius), focal_mask_grid, 8)
+Optimizer called with the following parameters:
+{'focal_plane_mask': {'field_stop_radius': -1.0,
+                      'grayscale': True,
+                      'num_pix': 100,
+                      'radius': 2.252},
+ 'image': {'bandwidth': 0.2,
+           'contrast': 8,
+           'iwa': 5,
+           'num_wavelengths': 1,
+           'owa': 20,
+           'resolution': 2},
+ 'instrument': {'inst_name': 'SPHERE'},
+ 'lyot_stop': {'alignment_tolerance': 1,
+               'filename': 'SPHERE/sphere_stop_ST_ALC2_nPup0100.fits',
+               'num_lyot_stops': 1},
+ 'method': {'edge_width_for_prior': 2,
+            'ending_scale': 1,
+            'force_no_hermitian_symmetry': False,
+            'force_no_x_mirror_symmetry': False,
+            'force_no_y_mirror_symmetry': False,
+            'initial_throughput_estimate': 1,
+            'maximize_planet_throughput': True,
+            'num_throughput_iterations': 2,
+            'starting_scale': 1},
+ 'pupil': {'N': 100,
+           'filename': 'SPHERE/pupil=vlt_btw_nPup=100.fits'},
+ 'solver': {'crossover': 0,
+            'method': 2,
+            'num_threads': 0}}
+
+File organization:
+{'analysis_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local/analysis',
+ 'drivers_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local/drivers',
+ 'input_files_dir': '/Users/mndiaye/python/aplc_optimization/masks',
+ 'log_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local/logs',
+ 'solution_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local/solutions',
+ 'survey_dir': '/Users/mndiaye/python/aplc_optimization/surveys/sphere_multils3_N0100_local'}
+
+Telescope pupil:
+   Mirror symmetry in x: yes
+   Mirror symmetry in y: yes
+
+Lyot stop #0:
+   Mirror symmetry in x: no
+   Searching for mirror symmetric Lyot stops in x...
+      Found Lyot stop #2 to fit.
+Lyot stop #1:
+   Mirror symmetry in x: no
+   Searching for mirror symmetric Lyot stops in x...
+      Found Lyot stop #3 to fit.
+Lyot stop #2:
+   Will be ignored due to symmetries with Lyot stops #[0]
+Lyot stop #3:
+   Will be ignored due to symmetries with Lyot stops #[1]
+Lyot stop #0:
+   Mirror symmetry in y: no
+   Searching for mirror symmetric Lyot stops in y...
+      Found Lyot stop #1 to fit.
+Lyot stop #1:
+   Will be ignored due to symmetries with Lyot stops #[0]
+Lyot stop #2:
+   Will be ignored due to symmetries with Lyot stops #[0]
+Lyot stop #3:
+   Will be ignored due to symmetries with Lyot stops #[1]
+
+Complete APLC:
+   Mirror symmetry in x: yes
+   Mirror symmetry in y: yes
+
+Starting optimization at scale 1 with 1913 variables and 4708 constraints.
+Creating model...
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-12-14
+Set parameter Crossover to value 0
+Set parameter Method to value 2
+Calculating and adding constraints...
+Wavelength 1/1; Variable 1000/1913
+Start optimization...
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (mac64[arm])
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 9416 rows, 1913 columns and 18012808 nonzeros
+Model fingerprint: 0xbed285eb
+Coefficient statistics:
+  Matrix range     [5e-12, 7e-04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-04, 1e-04]
+Presolve time: 3.63s
+Presolved: 1913 rows, 11329 columns, 18014721 nonzeros
+Ordering time: 0.01s
+
+Barrier statistics:
+ AA' NZ     : 1.829e+06
+ Factor NZ  : 1.831e+06 (roughly 20 MB of memory)
+ Factor Ops : 2.335e+09 (less than 1 second per iteration)
+ Threads    : 8
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   3.91978584e+03  0.00000000e+00  0.00e+00 0.00e+00  2.27e+01     5s
+   1   2.27301772e+03  5.27057260e+02  2.82e+01 5.55e-17  4.90e+00     5s
+   2   1.60740434e+03  9.86581488e+02  9.95e+00 5.55e-17  1.93e+00     6s
+   3   1.36385145e+03  1.14617906e+03  2.66e+00 1.11e-16  6.77e-01     6s
+   4   1.24679144e+03  1.18098426e+03  4.72e-01 5.55e-17  1.89e-01     7s
+   5   1.22043052e+03  1.19969334e+03  8.81e-02 5.55e-17  5.62e-02     8s
+   6   1.21248646e+03  1.20585612e+03  1.21e-02 5.55e-17  1.68e-02     8s
+   7   1.21082457e+03  1.20900604e+03  6.93e-04 5.55e-17  4.49e-03     9s
+   8   1.21035515e+03  1.20997099e+03  0.00e+00 5.55e-17  9.43e-04    10s
+   9   1.21023197e+03  1.21013331e+03  0.00e+00 5.55e-17  2.40e-04    10s
+  10   1.21021265e+03  1.21018116e+03  0.00e+00 5.55e-17  7.63e-05    11s
+  11   1.21020733e+03  1.21020271e+03  0.00e+00 8.33e-17  1.12e-05    11s
+  12   1.21020653e+03  1.21020550e+03  0.00e+00 8.33e-17  2.51e-06    12s
+  13   1.21020626e+03  1.21020601e+03  2.16e-06 8.33e-17  5.90e-07    12s
+  14   1.21020621e+03  1.21020617e+03  1.14e-06 8.33e-17  8.62e-08    13s
+  15   1.21020620e+03  1.21020619e+03  1.95e-08 8.33e-17  4.79e-09    14s
+
+Barrier solved model in 15 iterations and 13.99 seconds (18.33 work units)
+Optimal objective 1.21020620e+03
+
+Optimization finished!
+Restarting optimization for throughput iteration 1...
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (mac64[arm])
+
+CPU model: Apple M1
+Thread count: 8 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 9416 rows, 1913 columns and 18012808 nonzeros
+Model fingerprint: 0x81ee47e0
+Coefficient statistics:
+  Matrix range     [5e-12, 7e-04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-05, 8e-05]
+Presolve time: 3.59s
+Presolved: 1913 rows, 11329 columns, 18014721 nonzeros
+Ordering time: 0.01s
+
+Barrier statistics:
+ AA' NZ     : 1.829e+06
+ Factor NZ  : 1.831e+06 (roughly 20 MB of memory)
+ Factor Ops : 2.335e+09 (less than 1 second per iteration)
+ Threads    : 8
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   3.70053451e+03  0.00000000e+00  0.00e+00 0.00e+00  2.22e+01     5s
+   1   2.12071426e+03  5.25656573e+02  2.83e+01 5.55e-17  4.53e+00     5s
+   2   1.55784294e+03  9.86944881e+02  1.06e+01 8.33e-17  1.85e+00     6s
+   3   1.34326070e+03  1.14961928e+03  2.50e+00 5.55e-17  6.10e-01     6s
+   4   1.27356276e+03  1.17891758e+03  1.15e+00 5.55e-17  2.97e-01     7s
+   5   1.21932724e+03  1.19821747e+03  1.26e-01 5.55e-17  5.89e-02     7s
+   6   1.20983062e+03  1.20324022e+03  1.56e-02 5.55e-17  1.71e-02     8s
+   7   1.20767347e+03  1.20582481e+03  2.55e-03 5.55e-17  4.70e-03     9s
+   8   1.20699327e+03  1.20657655e+03  1.39e-04 8.33e-17  1.04e-03    10s
+   9   1.20681416e+03  1.20669673e+03  0.00e+00 5.55e-17  2.89e-04    10s
+  10   1.20678279e+03  1.20675671e+03  0.00e+00 5.55e-17  6.39e-05    11s
+  11   1.20677452e+03  1.20676761e+03  1.93e-06 5.55e-17  1.69e-05    11s
+  12   1.20677292e+03  1.20677135e+03  0.00e+00 5.55e-17  3.84e-06    12s
+  13   1.20677252e+03  1.20677195e+03  2.18e-06 5.55e-17  1.41e-06    12s
+  14   1.20677233e+03  1.20677219e+03  2.05e-06 5.55e-17  3.48e-07    13s
+  15   1.20677228e+03  1.20677227e+03  1.95e-05 7.55e-14  3.80e-08    13s
+  16   1.20677228e+03  1.20677228e+03  3.61e-06 1.60e-13  4.70e-10    14s
+
+Barrier solved model in 16 iterations and 13.93 seconds (17.83 work units)
+Optimal objective 1.20677228e+03
+
+WARNING: VerifyWarning: Keyword name 'LS_ALIGN_TOl' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'LS_NUM_STOPS' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'PROG_START' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'PROG_EDGE' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'THRPT_ITER' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'THRPT_ESTIM' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'MAX_THRPT' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'SLV_THRDS' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+WARNING: VerifyWarning: Keyword name 'SLV_XOVER' is greater than 8 characters or contains characters not allowed by the FITS standard; a HIERARCH card will be created. [astropy.io.fits.card]
+Optimization finished!
