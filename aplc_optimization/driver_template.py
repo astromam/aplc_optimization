@@ -59,35 +59,42 @@ pupil_grid = make_uniform_grid(num_pix, [1, 1])
 pupil = Field(pupil.ravel(), pupil_grid)
 
 # try:
-#   lyot_stops = [Field(read_fits(ls_fname.format(i)).ravel(), pupil_grid) for i in range(ls_num_stops)]
+#lyot_stops = [Field(read_fits(ls_fname.format(i)).ravel(), pupil_grid) for i in range(ls_num_stops)]
 # except:
 lyot_stop = Field(read_fits(ls_fname).ravel(), pupil_grid)
 
 # Building Lyot stops according to alignment tolerance
-if ls_num_stops in [1, 5, 9]:
-    lyot_stops = [lyot_stop]
-else:
-    lyot_stops = []
+#if ls_num_stops in [1, 5, 9]:
+#    lyot_stops = [lyot_stop]
+#else:
+#    lyot_stops = []
 
-if ls_num_stops in [4, 5, 8, 9]:
-    lyot_stop_pos_x = np.roll(lyot_stop.shaped, ls_alignment_tolerance, 1).ravel()
-    lyot_stop_neg_x = np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 1).ravel()
-    lyot_stop_pos_y = np.roll(lyot_stop.shaped, ls_alignment_tolerance, 0).ravel()
-    lyot_stop_neg_y = np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 0).ravel()
+#if ls_num_stops in [4, 5, 8, 9]:
+#    lyot_stop_pos_x = np.roll(lyot_stop.shaped, ls_alignment_tolerance, 1).ravel()
+#    lyot_stop_neg_x = np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 1).ravel()
+#    lyot_stop_pos_y = np.roll(lyot_stop.shaped, ls_alignment_tolerance, 0).ravel()
+#    lyot_stop_neg_y = np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 0).ravel()
 
-    lyot_stops.extend([lyot_stop_pos_x, lyot_stop_neg_x, lyot_stop_pos_y, lyot_stop_neg_y])
+#    lyot_stops.extend([lyot_stop_pos_x, lyot_stop_neg_x, lyot_stop_pos_y, lyot_stop_neg_y])
 
-if ls_num_stops in [8, 9]:
-    lyot_stop_pos_x_pos_y = np.roll(np.roll(lyot_stop.shaped, ls_alignment_tolerance, 1), ls_alignment_tolerance,
-                                    0).ravel()
-    lyot_stop_pos_x_neg_y = np.roll(np.roll(lyot_stop.shaped, ls_alignment_tolerance, 1), -ls_alignment_tolerance,
-                                    0).ravel()
-    lyot_stop_neg_x_pos_y = np.roll(np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 1), ls_alignment_tolerance,
-                                    0).ravel()
-    lyot_stop_neg_x_neg_y = np.roll(np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 1), -ls_alignment_tolerance,
-                                    0).ravel()
+#if ls_num_stops in [8, 9]:
+#    lyot_stop_pos_x_pos_y = np.roll(np.roll(lyot_stop.shaped, ls_alignment_tolerance, 1), ls_alignment_tolerance,
+#                                    0).ravel()
+#    lyot_stop_pos_x_neg_y = np.roll(np.roll(lyot_stop.shaped, ls_alignment_tolerance, 1), -ls_alignment_tolerance,
+#                                    0).ravel()
+#    lyot_stop_neg_x_pos_y = np.roll(np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 1), ls_alignment_tolerance,
+#                                    0).ravel()
+#    lyot_stop_neg_x_neg_y = np.roll(np.roll(lyot_stop.shaped, -ls_alignment_tolerance, 1), -ls_alignment_tolerance,
+#                                    0).ravel()
 
-    lyot_stops.extend([lyot_stop_pos_x_pos_y, lyot_stop_pos_x_neg_y, lyot_stop_neg_x_pos_y, lyot_stop_neg_x_neg_y])
+#    lyot_stops.extend([lyot_stop_pos_x_pos_y, lyot_stop_pos_x_neg_y, lyot_stop_neg_x_pos_y, lyot_stop_neg_x_neg_y])
+
+lyot_stops = []
+lyot_stop_ud = np.flipud(lyot_stop.shaped)
+lyot_stop_lr = np.fliplr(lyot_stop.shaped)
+lyot_stop_udlr = np.flipud(np.fliplr(lyot_stop.shaped))
+
+lyot_stops.extend([lyot_stop.shaped.ravel(), lyot_stop_ud.ravel(), lyot_stop_lr.ravel(), lyot_stop_udlr.ravel()])
 
 # Build science focal grid
 n_sci = int((np.ceil(img_owa) + 1) * img_resolution) * 2
