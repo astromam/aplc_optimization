@@ -27,9 +27,9 @@ machine: str
 N: int
     The number of pixels in the input (Primary, LS) and final (apodizer) arrays.
 """
-survey_name = "multilslamC6"
+survey_name = "refin"
 machine = "rita"
-N = 200
+N = 800
 
 '''
 Input File Parameters
@@ -120,6 +120,10 @@ num_wavelengths = 1
 alignment_tolerance = 1
 num_lyot_stops = 1
 
+# Optimization method
+starting_scale = 2
+ending_scale = 1
+
 # SURVEY PARAMETER DICTIONARY
 survey_parameters = {'instrument': {'inst_name': instrument.upper()},
                      'pupil': {'N': N, 'filename': pup_filename},
@@ -127,7 +131,8 @@ survey_parameters = {'instrument': {'inst_name': instrument.upper()},
                                    'num_lyot_stops': num_lyot_stops},
                      'focal_plane_mask': {'radius': radius, 'num_pix': N},
                      'image': {'contrast': contrast, 'iwa': IWA, 'owa': OWA, 'bandwidth': bandwidth,
-                               'num_wavelengths': num_wavelengths}}
+                               'num_wavelengths': num_wavelengths},
+                     'method': {'starting_scale': starting_scale, 'ending_scale': ending_scale}}
 
 # RUN DESIGN SURVEY
 sphere = DesignParameterSurvey(APLC, survey_parameters,
@@ -137,5 +142,5 @@ sphere.describe()
 
 sphere.write_drivers(True)
 sphere.run_optimizations(True)
-sphere.run_analyses(True)
+sphere.run_analyses(False)
 
