@@ -27,7 +27,7 @@ machine: str
 N: int
     The number of pixels in the input (Primary, LS) and final (apodizer) arrays.
 """
-survey_name = "refin-robust5-monolam"
+survey_name = "refin-robust5-multilam"
 machine = "rita"
 N = 800
 
@@ -114,7 +114,7 @@ contrast = 6
 IWA = 5
 OWA = 20
 bandwidth = 0.2
-num_wavelengths = 1
+num_wavelengths = 3
 
 # Robustness parameters
 alignment_tolerance = 2
